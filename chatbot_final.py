@@ -27,7 +27,7 @@ for resource in nltk_resources:
         nltk.data.find(f'tokenizers/{resource}')  # Exemple pour les tokenizers
     except LookupError:
         nltk.download(resource)
-nltk.download('punk_tab')
+
 
 #nltk.data.path.append(r'nltk_data')
 # Télécharger les ressources nécessaires
