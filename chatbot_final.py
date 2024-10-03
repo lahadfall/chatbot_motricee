@@ -16,11 +16,19 @@ import pyttsx3 as ttx #pour faire parler l'assistant
 import datetime
 import webbrowser
 import threading
+import os
 
+# Liste des ressources à télécharger
+nltk_resources = ['punkt', 'stopwords', 'averaged_perceptron_tagger', 'wordnet']
 
+# Vérification et téléchargement si nécessaire
+for resource in nltk_resources:
+    try:
+        nltk.data.find(f'tokenizers/{resource}')  # Exemple pour les tokenizers
+    except LookupError:
+        nltk.download(resource)
 
-
-nltk.data.path.append(r'nltk_data')
+#nltk.data.path.append(r'nltk_data')
 # Télécharger les ressources nécessaires
 #nltk.download('punkt')
 #nltk.download('stopwords')                                   
